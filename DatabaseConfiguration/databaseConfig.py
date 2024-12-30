@@ -26,7 +26,7 @@ DATABASE_URL = f"postgresql://{DATABASE_USER}:{DATABASE_PASSWORD}@{DATABASE_HOST
 # Create the SQLAlchemy engine and sessionmaker
 engine = create_engine(DATABASE_URL, echo=False)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
+Base.metadata.create_all(bind=engine)
 
 # Dependency to get a database session
 def get_session():

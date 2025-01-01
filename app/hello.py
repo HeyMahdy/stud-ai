@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from Models.testModel2 import Comment , CommentCreate
 
-from DatabaseConfiguration.databaseConfig import SessionDep
+from DatabaseConfiguration.databaseConfig import SessionDep, engine, Base
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-
+Base.metadata.create_all(bind=engine)
 
 origins = ["*"]
 
@@ -28,6 +28,6 @@ async def main_post_inthis(cmodel: CommentCreate , db : SessionDep ):
     db.commit()
     return {"message": "Comment added successfully"}
 
-app.get("/all")
-async def get_all(db : SessionDep ):
+@app.get("/all")
+async def get_all(db : SessionDep):
     return db.query(Comment).all()

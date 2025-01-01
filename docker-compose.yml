@@ -19,7 +19,7 @@ services:
         postgresql+psycopg2://${DATABASE_USER}:${DATABASE_PASSWORD}@db:${DATABASE_PORT}/${DATABASE_NAME}
 
   db:
-    image: postgres:15  # PostgreSQL official Docker image
+    image: postgres:15   # PostgreSQL official Docker image
     environment:
       POSTGRES_USER: ${DATABASE_USER}  # Set PostgreSQL user
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}  # Set PostgreSQL password

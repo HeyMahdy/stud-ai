@@ -35,10 +35,9 @@ starlette==0.41.3
 typer==0.15.1
 typing_extensions==4.12.2
 ujson==5.10.0
-uvicorn==0.34.0  # Needed to run the ASGI server
-alembic==1.12.0  # Needed for database migrations
+uvicorn==0.34.0  # Needed to run the ASGI server # Needed for database migrations
 watchfiles==1.0.3
 websockets==14.1
 SQLAlchemy~=2.0.36
 pip~=24.0
-setuptools~=65.5.0
+setuptools~=70.0.0
